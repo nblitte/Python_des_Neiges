@@ -9,12 +9,11 @@
 """
 
 from CONFIGS import *
+from math import sqrt, floor
 
 # En pixels, dimensions de la fenêtre d'affichage
 LARGEUR_FENETRE = 290
 HAUTEUR_FENETRE = 440
-# Dimension de la taille d'un carré en pixels
-DIMENSION = 16
 
 def lire_matrice(fichier):
     """
@@ -31,10 +30,6 @@ def calculer_pas(matrice):
     """
      Calcul la dimension à donner aux cases pour que le plan tienne dans la zone de la fenêtre
      turtle que nous aurons défini
-     Ex : pour une zone turtle d’affichage pour le plan de 290 (-240 à 50) de large et
-     440 (-240 à 200) de haut, si le plan fait 20 cases en largeur et 44 cases en hauteur,
-     les carrés auront une taille de 10 pour ne pas sortir de la zone (ici le souci, si la
-     taille est supérieure à 10, sera la hauteur du plan
     :param matrice: Résultat de la fonction lire_matrice()
     :return: Dimensions en largeur et hauteur appelé "pas", nombre de cases
     """
@@ -44,7 +39,7 @@ def calculer_pas(matrice):
     for i in range(long_M):
         larg_M = len(matrice[i])
 
-    # Nombre de cases à obtenir
+    # Nombre de cases pour le château
     nb_max_cases = long_M * larg_M # 513 cases
 
     """
@@ -55,30 +50,21 @@ def calculer_pas(matrice):
     soit une fenêtre avec 290 pixels de large et 440 pixels de hauteur
     """
 
-    # Calcul de la dimension en fonction du nombre de cases
-    dimension = (LARGEUR_FENETRE*HAUTEUR_FENETRE) // nb_max_cases
-    print("Dimension", dimension)
-    nb_case_la_pixels = LARGEUR_FENETRE // DIMENSION
-    nb_case_ha_pixels = HAUTEUR_FENETRE // DIMENSION
+    # Calcul de l'aire de la fenêtre Turtle
+    aire = LARGEUR_FENETRE*HAUTEUR_FENETRE
 
-    print("Total cases", nb_case_la_pixels * nb_case_ha_pixels)
+    # # Calcul de la dimension (pas) d'une case een pixels en fonction du nombre de
+    # cases du château (arrondi à l'entier inférieur)
+    pas = floor(sqrt(aire/ nb_max_cases)) # 15
 
-    print("Nb cases en largeur : ", nb_case_la_pixels)
-    print("Nb cases en hauteur : ", nb_case_ha_pixels)
+    # Calcul du nombre de cases possibles en largeur et en hauteur pour notre fenêtre Turtle
+    nb_case_la_pixels = LARGEUR_FENETRE // pas # 19
+    nb_case_ha_pixels = HAUTEUR_FENETRE // pas # 29
 
-    """nb_case_larg = LARGEUR_FENETRE // larg_M
-    print(nb_case_larg)
-    nb_case_long = HAUTEUR_FENETRE // long_M
-    print(nb_case_long)
-    nb_cases = nb_case_larg + nb_case_long
-    print(nb_cases)
-    
-    # Dimensions d'une case
-    dimensions = LARGEUR_FENETRE/nb_case_larg
-    print(dimensions)
-    dimensions = HAUTEUR_FENETRE / nb_case_long
-    print(dimensions)
-    """
+    # Calcul du nombre de cases de la fenêtre Turtle
+    nb_cases_total = nb_case_la_pixels * nb_case_ha_pixels # 551
+
+    return pas, nb_cases_total
 
 def coordonnees(case, pas):
     """

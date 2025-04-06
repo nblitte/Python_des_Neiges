@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e68ea370-1d30-4e9f-bbbe-0ac424d232bc" name="Changes" comment="Version de base du projet">
-      <change afterPath="$PROJECT_DIR$/my_package/plan_chateau.py" afterDir="false" />
+    <list default="true" id="e68ea370-1d30-4e9f-bbbe-0ac424d232bc" name="Changes" comment="Calcul de la dimension en fonction du nombre de cases (en cours)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,11 +75,29 @@
       <option name="project" value="LOCAL" />
       <updated>1743925914155</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Plan du château - Lire_Matrice OK">
+      <option name="closed" value="true" />
+      <created>1743927768690</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743927768690</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Calcul de la dimension en fonction du nombre de cases (en cours)">
+      <option name="closed" value="true" />
+      <created>1743935093165</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743935093165</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Version de base du projet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version de base du projet" />
+    <MESSAGE value="Plan du château - Lire_Matrice OK" />
+    <MESSAGE value="Calcul de la dimension en fonction du nombre de cases (en cours)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Calcul de la dimension en fonction du nombre de cases (en cours)" />
   </component>
 </project>
